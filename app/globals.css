@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Pacifico&display=swap');
+@import "tailwindcss";
+
+:root {
+  --pastel-purple: #E0BBE4;
+  --pastel-pink: #FEC8D8;
+  --pastel-blue: #D4E2F9;
+  --pastel-mint: #D5F4E6;
+  --pastel-lavender: #E5D9F2;
+  --pastel-peach: #FFD3B6;
+  --background: #FAF3F9;
+  --foreground: #4A4063;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: 'Quicksand', sans-serif;
+  --color-pastel-purple: var(--pastel-purple);
+  --color-pastel-pink: var(--pastel-pink);
+  --color-pastel-blue: var(--pastel-blue);
+  --color-pastel-mint: var(--pastel-mint);
+  --color-pastel-lavender: var(--pastel-lavender);
+  --color-pastel-peach: var(--pastel-peach);
+}
+
+body {
+  background: linear-gradient(135deg, #FAF3F9 0%, #E5D9F2 50%, #D4E2F9 100%);
+  background-attachment: fixed;
+  color: var(--foreground);
+  font-family: 'Quicksand', sans-serif;
+}
+
+.fancy-title {
+  font-family: 'Pacifico', cursive;
+}
+
+/* Star animation background */
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+.stars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  animation: twinkle 3s infinite;
+}
+
+/* Floating animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+.float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Pulse animation */
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.pulse-slow {
+  animation: pulse 3s ease-in-out infinite;
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #E0BBE4, #D4E2F9, #FEC8D8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Shimmer effect */
+@keyframes shimmer {
+  0% { background-position: -1000px 0; }
+  100% { background-position: 1000px 0; }
+}
+
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    transparent 100%
+  );
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite;
+}
