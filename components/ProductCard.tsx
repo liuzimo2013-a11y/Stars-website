@@ -49,7 +49,7 @@ export default function ProductCard({ product, index }: ProductCardProps) {
         <p className="text-gray-600 text-sm mb-4 line-clamp-2">
           {product.description}
         </p>
-        <span className="inline-block bg-lavender-100 text-purple-600 px-3 py-1 rounded-full text-xs font-medium mb-4">
+        <span className="inline-block bg-purple-100 text-purple-600 px-3 py-1 rounded-full text-xs font-medium mb-4">
           {product.category}
         </span>
 
